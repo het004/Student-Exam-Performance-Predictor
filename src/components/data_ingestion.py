@@ -6,6 +6,9 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass        #this is basically used to create classs variables
 
+from src.components.data_transformation import Datatransformation
+from src.components.data_transformation import Datatransformation_config
+
 @dataclass
 class DataingestionConfig:
     train_data_path:str=os.path.join('artifacts','train.csv')
@@ -19,7 +22,7 @@ class Dataingestion:
     def intiatedataingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
-            df=pd.read_csv('notebook\data\stud.csv')
+            df=pd.read_csv(r'notebook\data\stud.csv')
             logging.info("Read the datasets as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)  #used ??
@@ -42,4 +45,7 @@ class Dataingestion:
 
 if __name__=="__main__":
     obj=Dataingestion()
-    obj.intiatedataingestion()
+    train_data,test_data=obj.intiatedataingestion()
+
+    data_transformation=Datatransformation()
+    train_arr,test_arr,_=data_transformation.intiate_data_transformation(train_data,test_data)
