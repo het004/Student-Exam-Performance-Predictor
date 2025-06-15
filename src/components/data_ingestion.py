@@ -9,6 +9,9 @@ from dataclasses import dataclass        #this is basically used to create class
 from src.components.data_transformation import Datatransformation
 from src.components.data_transformation import Datatransformation_config
 
+from src.components.model_trainer import ModelTrainerConfig
+from src.components.model_trainer import ModelTrainer
+
 @dataclass
 class DataingestionConfig:
     train_data_path:str=os.path.join('artifacts','train.csv')
@@ -49,3 +52,6 @@ if __name__=="__main__":
 
     data_transformation=Datatransformation()
     train_arr,test_arr,_=data_transformation.intiate_data_transformation(train_data,test_data)
+    
+    modeltrainer=ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
