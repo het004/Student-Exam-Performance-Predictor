@@ -5,7 +5,8 @@
 
 An end-to-end machine learning project that predicts student math scores based on various demographic and academic factors. This project demonstrates a complete ML pipeline from data ingestion to web deployment using Flask.
 
-![Screenshot](https://cdn1.genspark.ai/user-upload-image/v1/webpage_capture_screen_tool_call/5b53054f-f297-416a-b7ed-9e80d5aae5fe)
+![Image](https://drive.google.com/uc?id=1-b0I0_kWb9lj5iEFtsBcjRlB4BIovM-T)
+
 
 ## 🎯 Project Overview
 
